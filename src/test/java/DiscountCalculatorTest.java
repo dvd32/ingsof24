@@ -5,6 +5,10 @@ import org.junit.jupiter.api.Test;
 import com.order.DiscountCalculator;
 import com.order.CustomerType;
 
+/**
+ * Test di vari casi possibili nella classe DiscountCalculatorTest()
+ */
+
 public class DiscountCalculatorTest {
 
     @Test

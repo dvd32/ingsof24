@@ -8,6 +8,10 @@ import java.util.List;
 
 import com.order.*;
 
+/**
+ * Test dei metodi get della classe Order()
+ */
+
 class OrderTest {
 
     Order order;
