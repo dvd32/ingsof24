@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Classe Main per eseguire l'ordine.
+ * Clase Main para ejecutar el pedido.
  */
 public class Main {
     public static void main(String[] args) {

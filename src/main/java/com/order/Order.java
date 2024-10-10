@@ -2,6 +2,10 @@ package com.order;
 import java.util.List;
 
 public class Order {
+    /**
+     * 
+     */
+
     private String customerName;
     private CustomerType customerType;
     private List<String> items;
@@ -17,6 +21,44 @@ public class Order {
         this.discount = 0;
         this.tax = 0;
     }
+
+    
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+
+
+    public List<String> getItems() {
+        return items;
+    }
+
+
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+
+
+    public double getDiscount() {
+        return discount;
+    }
+
+
+
+    public double getTax() {
+        return tax;
+    }
+
+
 
     public void applyDiscount() {
         this.discount = DiscountCalculator.calculateDiscount(this.customerType, this.totalAmount);

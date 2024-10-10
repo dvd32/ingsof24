@@ -1,6 +1,12 @@
 package com.order;
 
 public class DiscountCalculator {
+    /**
+     * Los clientes puedon ser de tipo VIP (tengono mas discount) o de tipo NORMAL
+     * @param customerType tipo de cliente
+     * @param totalAmount importe del order
+     * @return importe con el descuento
+     */
     public static double calculateDiscount(CustomerType customerType, double totalAmount) {
         double discount = 0;
 
