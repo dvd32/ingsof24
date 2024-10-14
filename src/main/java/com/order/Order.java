@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Order {
     /**
-     * 
+     * Oggetto Order che ha come attributi: String customerName, CustomerType customerType, List<String> items, double totalAmount
      */
 
     private String customerName;
