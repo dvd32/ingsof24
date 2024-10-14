@@ -13,6 +13,7 @@ public class Order {
     private double discount;
     private double tax;
 
+    // Constructor de Order
     public Order(String customerName, CustomerType customerType, List<String> items, double totalAmount) {
         this.customerName = customerName;
         this.customerType = customerType;
