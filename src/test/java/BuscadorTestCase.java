@@ -20,7 +20,7 @@ class BuscadorTestCase {
         buscador = new Buscador();
         String [] nombres = {"Rausa","Pietro","Poggi"};
 
-        List<String> listaNombres = Arrays.asList(nombres);
+        listaNombres = Arrays.asList(nombres);
     }
 
 @Test
