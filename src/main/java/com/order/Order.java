@@ -1,11 +1,10 @@
 package com.order;
+
+import com.patrones.Logger; // Asegúrate de importar la clase Logger
+
 import java.util.List;
 
 public class Order {
-    /**
-     * Oggetto Order che ha come attributi: String customerName, CustomerType customerType, List<String> items, double totalAmount
-     */
-
     private String customerName;
     private CustomerType customerType;
     private List<String> items;
@@ -13,7 +12,6 @@ public class Order {
     private double discount;
     private double tax;
 
-    // Constructor de Order
     public Order(String customerName, CustomerType customerType, List<String> items, double totalAmount) {
         this.customerName = customerName;
         this.customerType = customerType;
@@ -21,56 +19,29 @@ public class Order {
         this.totalAmount = totalAmount;
         this.discount = 0;
         this.tax = 0;
+
+        Logger logger = Logger.getInstance();
+        logger.log("INFO", "Order creado para el cliente: " + customerName + " con importe total: " + totalAmount);
     }
-
-    
-
-    public String getCustomerName() {
-        return customerName;
-    }
-
-
-
-    public CustomerType getCustomerType() {
-        return customerType;
-    }
-
-
-
-    public List<String> getItems() {
-        return items;
-    }
-
-
-
-    public double getTotalAmount() {
-        return totalAmount;
-    }
-
-
-
-    public double getDiscount() {
-        return discount;
-    }
-
-
-
-    public double getTax() {
-        return tax;
-    }
-
-
 
     public void applyDiscount() {
+        Logger logger = Logger.getInstance();
+        logger.log("INFO", "Aplicando descuento para el cliente: " + this.customerName);
         this.discount = DiscountCalculator.calculateDiscount(this.customerType, this.totalAmount);
+        logger.log("INFO", "Descuento aplicado: " + this.discount);
     }
 
     public void calculateTax() {
+        Logger logger = Logger.getInstance();
+        logger.log("INFO", "Calculando impuesto para el cliente: " + this.customerName);
         this.tax = TaxCalculator.calculateTax(this.totalAmount);
+        logger.log("INFO", "Impuesto calculado: " + this.tax);
     }
 
     public void printOrderDetails() {
+        Logger logger = Logger.getInstance();
         double finalAmount = this.totalAmount - this.discount + this.tax;
+        logger.log("INFO", "Imprimiendo detalles del pedido para el cliente: " + this.customerName);
         System.out.println("Customer: " + this.customerName);
         System.out.println("Customer Type: " + this.customerType);
         System.out.println("Items: " + String.join(", ", this.items));
@@ -79,6 +50,7 @@ public class Order {
         System.out.println("Tax: " + this.tax);
         System.out.println("Final Amount: " + finalAmount);
     }
+
     public String returnOrderDetails() {
         double finalAmount = totalAmount - this.discount + this.tax;
         return "Customer: " + this.customerName +
