@@ -1,15 +1,13 @@
 package com.order;
 
-public class DiscountCalculator {
-    /**
-     * Los clientes puedon ser de tipo VIP (tengono mas discount) o de tipo NORMAL
-     * @param customerType tipo de cliente
-     * @param totalAmount importe del order
-     * @return importe con el descuento
-     */
-    public static double calculateDiscount(CustomerType customerType, double totalAmount) {
-        double discount = 0;
+import com.patrones.Logger;
 
+public class DiscountCalculator {
+    public static double calculateDiscount(CustomerType customerType, double totalAmount) {
+        Logger logger = Logger.getInstance();
+        logger.log("INFO", "Iniciando cálculo de descuento para tipo de cliente: " + customerType + " y monto total: " + totalAmount);
+
+        double discount = 0;
         switch (customerType) {
             case REGULAR:
                 if (totalAmount > 1000) {
@@ -31,6 +29,8 @@ public class DiscountCalculator {
                 }
                 break;
         }
+
+        logger.log("INFO", "Descuento calculado: " + discount);
         return discount;
     }
 }
