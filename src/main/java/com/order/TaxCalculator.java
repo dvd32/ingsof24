@@ -1,14 +1,13 @@
 package com.order;
 
+import com.patrones.Logger;
+
 public class TaxCalculator {
-    /**
-     * Calcula el impuesto basado en el total del pedido.
-     * La función devuelve el total multiplicado por la tasa de impuesto del 15%.
-     * 
-     * @param totalAmount es el precio total del pedido
-     * @return el importo del impuesto calculado
-     */
     public static double calculateTax(double totalAmount) {
-        return totalAmount * 0.15;
+        Logger logger = Logger.getInstance();
+        logger.log("INFO", "Iniciando cálculo de impuestos para un monto total de: " + totalAmount);
+        double tax = totalAmount * 0.15;
+        logger.log("INFO", "Impuesto calculado: " + tax);
+        return tax;
     }
 }
